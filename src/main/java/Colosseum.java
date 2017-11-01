@@ -35,7 +35,7 @@ public class Colosseum {
      * Input scanner. Use this to take in user's input for buildPokemon(). <br>
      * Useful functions: next(), nextInt() .
      */
-    static Scanner myScan;
+    static Scanner myScan = new Scanner(System.in);
 
     /**
      * How we will build our Pokemon to battle.
@@ -114,7 +114,9 @@ public class Colosseum {
         System.out.println("Player 1, build your Pokemon!");
         System.out.println("=================");
         firstPokemon = buildPokemon();
-        firstPokemon.name = "Chuchu";
+        System.out.print("Please name your Pokemon: ");
+        firstPokemon.name = myScan.nextLine();
+        firstPokemon.hitPoints = myScan.nextInt();
 
         System.out.println("");
 
